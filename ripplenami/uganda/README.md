@@ -7,23 +7,19 @@
       - HTTP REQUEST (GET)
       - HTTP REQUEST (PUT)
 ## Testing Environment Setup
-- asdf
+- Import the Form Package [Package_RippleNami Uganda 4_22.json](https://github.com/jhsuZerion/ZerionProjects/blob/master/ripplenami/uganda/Package_RippleNami%20Uganda%204_22.json)
+- Import the Dataflow [Uganda Dataflow.json](https://github.com/jhsuZerion/ZerionProjects/blob/master/ripplenami/uganda/Uganda%20Dataflow.json)
+- Update the Dataflow Action `add_property_unique_id` 
+   - Create and/or assign valid iFormBuilder Connection
+   - Select form named `registration_c_property`
+   - Map `property_unique_id` to `record['property_unique_id']`
+- Create iFormBuilder Endpoint with Webhook URL from `ifb_registration_p`
+- Double-check that `PUT_rwaves_prod` Action is disabled
 ## Test Cases
+*For each test case, if a new property is registered, check the record in iFormBuilder for the property_unique_id which is the parish_id + record ID. If a new property is registered, check the Residential Properties layer in [rWAVES Staging](https://rwaves-stage.ripplenami.com/web/index.html#/maps/mine/). If a new or existing individual is included in the record, check the corresponding layer in [rWAVES Staging](https://rwaves-stage.ripplenami.com/web/index.html#/maps/mine/) based on the `registration_relationship` field.*
 - [ ] Complete rCAPTURE record filling in new property with no individual
-   - iFormBuilder record updated with property index
-   - New rWAVES pin on Residential Properties layer
 - [ ] How to Test: Complete rCAPTURE record filling in new property with new individual
-   - iFormBuilder record updated with property index
-   - New rWAVES pin on Residential Properties layer
-   - New rWAVES pin on Individual layer depending on relationship selected in record
 - [ ] How to Test: Complete rCAPTURE record filling in new property with existing individual
-   - iFormBuilder record updated with property index
-   - New rWAVES pin on Residential Properties layer
-   - New rWAVES pin on Individual layer depending on relationship selected in record
 - [ ] Complete rCAPTURE record selecting existing property with new individual
-   - New rWAVES pin on Residential Properties layer
-   - New rWAVES pin on Individual layer depending on relationship selected in record
 - [ ] Complete rCAPTURE record selecting existing property with existing individual
-   - New rWAVES pin on Residential Properties layer
-   - New rWAVES pin on Individual layer depending on relationship selected in record
 ## Test History
