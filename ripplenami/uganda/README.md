@@ -16,7 +16,7 @@
 - Create iFormBuilder Endpoint with Webhook URL from `ifb_registration_p`
 - Double-check that the Action `PUT_rwaves_prod` is disabled
 ## Test Cases
-*For each test case, if a new property is registered, check the record in iFormBuilder for the property_unique_id which is the parish_id + record ID.  
+*For each test case, if a new property is registered, check in iFormBuilder for the property_unique_id which is the parish_id + record ID.  
 If a new property is registered, check the Residential Properties layer in [rWAVES Staging](https://rwaves-stage.ripplenami.com/web/index.html#/maps/mine/).  
 If a new or existing individual is included in the record, check the corresponding layer in [rWAVES Staging](https://rwaves-stage.ripplenami.com/web/index.html#/maps/mine/) based on the `registration_relationship` field.*
 - [ ] Complete rCAPTURE record filling in new property with no individual
